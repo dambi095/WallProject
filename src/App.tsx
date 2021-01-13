@@ -2,6 +2,8 @@ import React from 'react';
 import MainFooter from './components/Footer/MainFooter';
 import MainHeader from './components/Header/MainHeader';
 import Home from './pages/Home';
+import '@blueprintjs/core/lib/css/blueprint.css';
+
 
 const App:React.FC = () => {
   return (
