@@ -1,14 +1,14 @@
 import React from 'react';
-import './App.css';
+import MainFooter from './components/Footer/MainFooter';
+import MainHeader from './components/Header/MainHeader';
+import Home from './pages/Home';
 
 const App:React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <h3>
-          WELCOME
-        </h3>
-      </header>
+      <MainHeader />
+      <Home />
+      <MainFooter />
     </div>
   );
 }
