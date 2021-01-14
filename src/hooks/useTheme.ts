@@ -22,7 +22,6 @@ const useTheme = () => {
      };
  
      const toggleTheme = () => setMode(theme === 'light' ? 'dark' : 'light');
-     console.log('useTheme ' , theme);
      return [theme, toggleTheme];
 };
 
