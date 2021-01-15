@@ -9,7 +9,6 @@ const Container = styled.div`
   line-height: 76px;
   align-items: center;
   justify-content: center;
-  content: "";
   clear: both;
   display: block;
   background-color: ${(props) => props.theme.mainBackground};

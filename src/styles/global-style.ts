@@ -7,16 +7,16 @@ import { reset } from 'styled-reset';
 
 // 외부에서 import 할거니까 모듈 내보내자~!
 const GlobalStyle = createGlobalStyle`
-  ${reset}
-  * {
-  box-sizing: border-box;
+    ${reset}
+    * {
+        box-sizing: border-box;
     }
-  #root {
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    min-width: 800;
-  }
+    #root {
+        height: 100vh;
+        width: 100%;
+        text-align: center; 
+        min-width: 300px;
+    }
 }
 `;
 

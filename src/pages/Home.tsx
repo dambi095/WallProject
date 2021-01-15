@@ -3,12 +3,12 @@ import { RouteComponentProps } from 'react-router';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100%;
   background-color: ${(props) => props.theme.mainBackground};
   color: ${(props) => props.theme.primaryText};
 `;
 
-const Home: React.FC<RouteComponentProps> = () => {
+const Home: React.FC = () => {
     return (
       <Container>
         <h1>🎨</h1>

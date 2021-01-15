@@ -24,7 +24,7 @@ const theme = {
     divider: `rgba(0, 0, 0, 0.06)`,
     background: `rgba(0, 0, 0, 0.04)`,
     tableHeader: `rgba(0, 0, 0, 0.02)`,
-  },
+  }
 };
 
 export default theme;

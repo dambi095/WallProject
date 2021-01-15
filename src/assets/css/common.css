@@ -1,6 +1,6 @@
 
 @media (prefers-color-scheme: dark) {
-    
+
 }
 
 .has-outline {
@@ -21,3 +21,9 @@
   bottom: -6px;
   right: -6px;
 }
+
+@media screen and (min-width: 768px){
+}  
+
+@media screen and (min-width: 1024px){
+}    
