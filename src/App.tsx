@@ -6,6 +6,7 @@ import MainHeader from './components/Header/MainHeader';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import theme from './styles/theme';
 import './assets/css/common.css';
+import GlobalStyle from './styles/global-style';
 
 const App:React.FC = () => {
   const [themeMode, toggleTheme] = useTheme(); // hook 함수 하용
@@ -13,6 +14,7 @@ const App:React.FC = () => {
 
   return (
     <ThemeProvider theme={nowTheme}>
+      <GlobalStyle />
       <MainHeader />
     </ThemeProvider>
   );

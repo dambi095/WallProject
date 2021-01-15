@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const P = styled.p`
   display: inline-block;
-  font-size: 25px;
+  font-size: 21px;
   font-weight: bold;
   letter-spacing: 0.1rem;
 `;
@@ -32,7 +32,6 @@ const MenwIcon = styled.div`
   float: right;
   margin-right: 20px;
 `;
-
 
 const MainHeader: React.FC = () => {
     return (

@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom';
 import dotenv from 'dotenv';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import GlobalStyle from './styles/global-style';
 
 dotenv.config();
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
