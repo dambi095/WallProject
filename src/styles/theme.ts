@@ -1,7 +1,6 @@
 /* 
     스타일 - 테마 모음
 */
-import styled, { css, DefaultTheme } from 'styled-components';
 
 const theme = {
   dark: {

@@ -9,11 +9,17 @@ import { reset } from 'styled-reset';
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
+
+  * {
+  box-sizing: border-box;
+    }
   #root {
     height: 100vh;
     width: 100%;
     text-align: center;
+    min-width: 900;
   }
+  
 `;
 
 export default GlobalStyle;
