@@ -4,6 +4,7 @@ import useTheme from './hooks/useTheme';
 import MainFooter from './components/Footer/MainFooter';
 import MainHeader from './components/Header/MainHeader';
 import '@blueprintjs/core/lib/css/blueprint.css';
+import 'react-toastify/dist/ReactToastify.css';
 import theme from './styles/theme';
 import './assets/css/common.css';
 import GlobalStyle from './styles/global-style';
