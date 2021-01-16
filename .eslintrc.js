@@ -19,6 +19,7 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
         'import/prefer-default-export': 'off', // export default 필수 조건 제거 
+        '@typescript-eslint/no-explicit-any': 'off',
         'import/extensions': [
 			'error',
 			'ignorePackages',
