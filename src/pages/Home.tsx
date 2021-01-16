@@ -1,9 +1,10 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router';
 import styled from 'styled-components';
+import KakaoMap from '../components/Map/KakaoMap';
 
+// min-height: 100%; 
 const Container = styled.div`
-  min-height: 100%;
   background-color: ${(props) => props.theme.mainBackground};
   color: ${(props) => props.theme.primaryText};
 `;
@@ -11,7 +12,7 @@ const Container = styled.div`
 const Home: React.FC = () => {
     return (
       <Container>
-        <h1>🎨</h1>
+        <KakaoMap />
       </Container>
     );
 };

@@ -19,9 +19,6 @@ const ShareButton = styled.div`
     margin-right: 10px;
 `;
 
-const Span = styled.span`
-`;
-
 const Share: React.FC = () => {
 
     useEffect(() => {
@@ -62,7 +59,7 @@ const Share: React.FC = () => {
 
     return (
       <>
-        <Span>공유하기</Span>
+        <p>공유하기</p>
         <Container>
           <ShareButton>
             <RiKakaoTalkFill className='kakaoBtn' size='50' color='F5E1A4' />
