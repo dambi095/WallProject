@@ -38,6 +38,7 @@ const KakaoMap: React.FC = () => {
                 enableHighAccuracy : false,
                 // 위치 정보를 강제로 재확인하기 위해 사용하기도 하는 이 값의 기본 값은 0이다.
                 maximumAge : 300000,
+                timeout : 8000,
             };
 
             new Promise<GeolocationPosition>((resolve) => {
