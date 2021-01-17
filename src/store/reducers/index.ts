@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux'; // 리듀서 합치기 
-import login from './modules/login';
-
+import { combineReducers } from 'redux';
+import { postReducer as posts } from './postReducer';
+ 
 const rootReducer = combineReducers({
-    login
+  posts,
 });
-
+ 
 export default rootReducer;
 
 export type RootState = ReturnType<typeof rootReducer>;

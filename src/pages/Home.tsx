@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import KakaoMap from '../components/Map/KakaoMap';
+import Pagination from '../components/Pagination';
+import KakaoMap from '../components/KakaoMap';
 
 // min-height: 100%; 
 const Container = styled.div`
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
     return (
       <Container>
         <KakaoMap />
+        <Pagination />
       </Container>
     );
 };

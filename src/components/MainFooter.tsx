@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Share from '../Button/Share';
+import Share from './Share';
 
 
 const Container = styled.div`
