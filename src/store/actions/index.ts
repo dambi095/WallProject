@@ -1,6 +1,6 @@
-export const LOAD_POST = 'SELECT_POST';
-export const LOAD_POST_SUCCESS = 'SELECT_POST_SUCCESS';
-export const LOAD_POST_FAIL = 'SELECT_POST_FAIL';
+export const LOAD_POST = 'LOAD_POST';
+export const LOAD_POST_SUCCESS = 'LOAD_POST_SUCCESS';
+export const LOAD_POST_FAIL = 'LOAD_POST_FAIL';
 
 export interface IType {
     body: string,
@@ -15,10 +15,10 @@ export const loadPost = () => {
     };
 };
 
-export const loadPostSuccess = (posts: any, isLoading: boolean) => {
+export const loadPostSuccess = (posts: IType, isLoading: boolean) => {
     return {
         type: LOAD_POST_SUCCESS,
-        payload: posts.data,
+        payload: posts,
         isLoading
     };
 };

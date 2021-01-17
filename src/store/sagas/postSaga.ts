@@ -4,12 +4,10 @@ import * as actions from '../actions';
 
 function* fetchPostSaga(action: any) {
     try{
-        const data:Array<actions.IType> = yield call(api.loadPostApi, 1);
-        console.log('@:', data);
-        
-        yield put(actions.loadPostSuccess(data, true)); // put으로 dispatch!
+        const res = yield call(api.loadPostApi, 1);
+        yield put(actions.loadPostSuccess(res.data, false)); // put으로 dispatch!
     } catch(error) {
-        yield put(actions.loadPostFail(error, false));
+        yield put(actions.loadPostFail(error, true));
     }
 }
 

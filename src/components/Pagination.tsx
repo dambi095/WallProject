@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-new */
 import React, { useEffect } from 'react'; 
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,10 +17,9 @@ const Container = styled.div`
 const Pagination: React.FC = () => {
     const { posts, isLoading } = useSelector((state: RootState) => state.posts);
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         dispatch(actions.loadPost());
-        console.log('posts:', posts, isLoading);
     },[isLoading]);
 
     if (isLoading) {
@@ -28,7 +28,9 @@ const Pagination: React.FC = () => {
 
     return (
       <Container>
-        page
+        {posts.map((el: actions.IType, index: number) => {
+            return <div key={index}>{el.title}</div>;
+        })}
       </Container>
     );
 };
