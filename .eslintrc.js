@@ -20,6 +20,7 @@ module.exports = {
         'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
         'import/prefer-default-export': 'off', // export default 필수 조건 제거 
         '@typescript-eslint/no-explicit-any': 'off',
+        'camelcase': 'off',
         'import/extensions': [
 			'error',
 			'ignorePackages',

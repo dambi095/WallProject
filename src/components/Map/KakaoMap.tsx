@@ -52,19 +52,78 @@ const KakaoMap: React.FC = () => {
                 }, options);
             }).then((data) => {
                     window.kakao.maps.load(() => {
+
                         const container = document.getElementById('map');
                         const mapOption = {
                             center: new window.kakao.maps.LatLng(
                                  data.coords.latitude, data.coords.longitude
                             ),
-                            level: 3,
+                            level: 2,
                         };
                         const map = new window.kakao.maps.Map(container, mapOption);
-                        const marker = new window.kakao.maps.Marker({
-                            position: map.getCenter()
-                        });
+                        const positions = [
+                            {
+                                title: '내위치', 
+                                latlng: new window.kakao.maps.LatLng(data.coords.latitude, data.coords.longitude)
+                            },   
+                            {
+                                title: '내위치 근처', 
+                                latlng: new window.kakao.maps.LatLng(37.616567, 126.720582)
+                            },
+                            {
+                                title: '카카오', 
+                                latlng: new window.kakao.maps.LatLng(33.450705, 126.570677)
+                            },
+                            {
+                                title: '생태연못', 
+                                latlng: new window.kakao.maps.LatLng(33.450936, 126.569477)
+                            },
+                            {
+                                title: '텃밭', 
+                                latlng: new window.kakao.maps.LatLng(33.450879, 126.569940)
+                            },
+                            {
+                                title: '근린공원',
+                                latlng: new window.kakao.maps.LatLng(33.451393, 126.570738)
+                            }
+                        ];
                         
-                        marker.setMap(map);
+                        const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+                        const markers = [];
+                        for (let i = 0; i < positions.length; i+=1) {
+                            
+                            // 마커 이미지의 이미지 크기 입니다
+                            const imageSize = new window.kakao.maps.Size(24, 35); 
+                            
+                            // 마커 이미지를 생성합니다    
+                            const markerImage = new window.kakao.maps.MarkerImage(imageSrc, imageSize); 
+                            
+                            // 마커를 생성합니다
+                            const marker = new window.kakao.maps.Marker({
+                                map, // 마커를 표시할 지도
+                                position: positions[i].latlng, // 마커를 표시할 위치
+                                title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                                image : markerImage // 마커 이미지 
+                            });
+
+                            markers.push(marker);
+                        }
+                        // 현재위치에서 반경 100미터 안에있는 마커들만 표시 
+                        markers.forEach((m: any) => {
+                            const c1 = map.getCenter();
+                            const c2 = m.getPosition();
+                            const poly = new window.kakao.maps.Polyline({
+                                // map: map, 을 하지 않아도 거리는 구할 수 있다.
+                                path: [c1, c2]
+                            });
+                            const dist = poly.getLength(); // m 단위로 리턴
+
+                            if (dist < 100) {
+                                m.setMap(map);
+                            } else {
+                                m.setMap(null);
+                            }
+                        });
                     });
             }).catch(() => toast('다시시도 해주세요'));
         } else {
