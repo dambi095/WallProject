@@ -9,8 +9,8 @@ import { RootState } from '../store/reducers';
 import Loading from '../components/Loading';
 import Pagination from '../components/Pagination';
 
-// min-height: 100%; 
 const Container = styled.div`
+  min-height: 100%; 
   background-color: ${(props) => props.theme.mainBackground};
   color: ${(props) => props.theme.primaryText};
 `;
