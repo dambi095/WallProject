@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
@@ -33,6 +32,7 @@ const Home: React.FC = () => {
         <PostList 
           list={posts}
         />
+        <p>asdad</p>
         <Pagination 
           itemsCount={Object.keys(posts).length} 
           pageSize={10}

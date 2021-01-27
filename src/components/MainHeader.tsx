@@ -33,10 +33,15 @@ const MenwIcon = styled.div`
 `;
 
 const MainHeader: React.FC = () => {
+
+  const createPosts = () => {
+    console.log('222');
+  };
+
     return (
       <Container>
         <WriteIcon>
-          <VscExpandAll size='35' />
+          <VscExpandAll size='35' onClick={createPosts} />
         </WriteIcon>
         <P>EVERYONE&rsquo;S WALL</P>
         <MenwIcon>

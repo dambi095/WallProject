@@ -1,7 +1,9 @@
 import axios from 'axios';
+import { IUser, ILoginResponse } from '../interfaces/interface';
 
-const loginApi = () => {
-  return axios.post('');
+const loginApi = (payload: IUser) => {
+
+  return axios.post<ILoginResponse>('');
 };
 
 const loadPostApi = (term: number) => {

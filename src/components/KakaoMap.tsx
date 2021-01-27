@@ -129,7 +129,7 @@ const KakaoMap: React.FC = () => {
         } else {
             toast('위치 정보가 지원되지 않습니다');
         }
-    }, []);
+    }, [isAgreed, isLoading]);
     
     return (
       <Container>

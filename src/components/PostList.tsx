@@ -1,11 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import styled from 'styled-components';
-import { IType } from '../store/actions';
-
-interface IPostListProps { 
-    list: Array<IType>
-}
+import { IType, IPostListProps } from '../interfaces/interface';
 
 const Container = styled.div`
     height: 200px;
@@ -15,12 +11,12 @@ const Container = styled.div`
 `;
 
 const PostList:React.FC<IPostListProps> = ({ list } : IPostListProps) => {
-    return (
-      <Container>
-        {list.map((post: IType, index: number) => {
-          return <div key={index}>{post.title}</div>;
-        })}
-      </Container>
+  return (
+    <Container>
+      {list && list.map((post: IType, index: number) => {
+        return <div key={index}>{post.title}</div>;
+      })}
+    </Container>
     );
 };
 
