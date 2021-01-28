@@ -1,31 +1,27 @@
-
 @media (prefers-color-scheme: dark) {
-
 }
 
 .has-outline {
-    background: #51ab9f;
-    border-radius: 50%;
-    padding: 5px;
-    position: relative;
-    width:8%;
+	background: #51ab9f;
+	border-radius: 50%;
+	padding: 5px;
+	position: relative;
+	width: 8%;
 }
 .has-outline:after {
-  border-radius: 50%;
-  padding: 5px;
-  border: 2px dashed #9dd5cf;
-  position: absolute;
-  content: '';
-  top: -6px;
-  left: -6px;
-  bottom: -6px;
-  right: -6px;
+	border-radius: 50%;
+	padding: 5px;
+	border: 2px dashed #9dd5cf;
+	position: absolute;
+	content: '';
+	top: -6px;
+	left: -6px;
+	bottom: -6px;
+	right: -6px;
 }
 
-@media screen and (min-width: 768px){
-    
-}  
+@media screen and (min-width: 768px) {
+}
 
-@media screen and (min-width: 1024px){
-}    
-
+@media screen and (min-width: 1024px) {
+}

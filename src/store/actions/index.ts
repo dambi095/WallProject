@@ -1,4 +1,4 @@
-import { IUser, IType } from '../../interfaces/interface';
+import {IUser, IType} from '../../interfaces/interface';
 
 export const LOGIN = 'LOGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUUCESS';
@@ -10,49 +10,48 @@ export const LOAD_POST_FAIL = 'LOAD_POST_FAIL';
 
 /* 로그인 */
 export const login = (user: IUser, isLoggedin: boolean) => {
-    return {
-        type: LOGIN,
-        payload: user,
-        isLoggedin
-    };
+	return {
+		type: LOGIN,
+		payload: user,
+		isLoggedin,
+	};
 };
 
 export const loginSuccess = (user: IUser, isLoggedin: boolean) => {
-    return {
-        type: LOAD_POST_SUCCESS,
-        payload: user,
-        isLoggedin
-    };
+	return {
+		type: LOAD_POST_SUCCESS,
+		payload: user,
+		isLoggedin,
+	};
 };
 
 export const loginFail = (error: Error, isLoggedin: boolean) => {
-    return {
-        type: LOAD_POST_SUCCESS,
-        payload: error,
-        isLoggedin
-    };
+	return {
+		type: LOAD_POST_SUCCESS,
+		payload: error,
+		isLoggedin,
+	};
 };
-
 
 /* 포스트 */
 export const loadPost = () => {
-    return {
-        type: LOAD_POST,
-    };
+	return {
+		type: LOAD_POST,
+	};
 };
 
 export const loadPostSuccess = (posts: IType, isLoading: boolean) => {
-    return {
-        type: LOAD_POST_SUCCESS,
-        payload: posts,
-        isLoading
-    };
+	return {
+		type: LOAD_POST_SUCCESS,
+		payload: posts,
+		isLoading,
+	};
 };
 
 export const loadPostFail = (error: Error, isLoading: boolean) => {
-    return {
-        type: LOAD_POST_FAIL,
-        payload: error,
-        isLoading
-    };
+	return {
+		type: LOAD_POST_FAIL,
+		payload: error,
+		isLoading,
+	};
 };

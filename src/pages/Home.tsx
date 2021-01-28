@@ -1,44 +1,39 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 import KakaoMap from '../components/KakaoMap';
 import PostList from '../components/PostList';
 import * as actions from '../store/actions';
-import { RootState } from '../store/reducers';
+import {RootState} from '../store/reducers';
 import Loading from '../components/Loading';
 import Pagination from '../components/Pagination';
 
 const Container = styled.div`
-  min-height: 100%; 
-  background-color: ${(props) => props.theme.mainBackground};
-  color: ${(props) => props.theme.primaryText};
+	min-height: 100%;
+	background-color: ${(props) => props.theme.mainBackground};
+	color: ${(props) => props.theme.primaryText};
 `;
 
 const Home: React.FC = () => {
-    const { posts, isLoading } = useSelector((state: RootState) => state.posts);
-    const dispatch = useDispatch();
+	const {posts, isLoading} = useSelector((state: RootState) => state.posts);
+	const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(actions.loadPost());
-    },[isLoading]);
+	useEffect(() => {
+		dispatch(actions.loadPost());
+	}, [isLoading]);
 
-    if (isLoading) {
-      return <Loading />;
-    }
+	if (isLoading) {
+		return <Loading />;
+	}
 
-    return (
-      <Container>
-        <KakaoMap />
-        <PostList 
-          list={posts}
-        />
-        <p>asdad</p>
-        <Pagination 
-          itemsCount={Object.keys(posts).length} 
-          pageSize={10}
-        />
-      </Container>
-    );
+	return (
+		<Container>
+			<KakaoMap />
+			<PostList list={posts} />
+			<p>asdad</p>
+			<Pagination itemsCount={Object.keys(posts).length} pageSize={10} />
+		</Container>
+	);
 };
 
 export default Home;
