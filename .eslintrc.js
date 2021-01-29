@@ -29,13 +29,13 @@ module.exports = {
         'react/jsx-indent-props':'off',
         'for-direction': 2, // fory 루프가 무한대로 실행되는 것을 방지
         'no-undef': 'off',
-        'no-empty': 2,
+        'no-empty': 'off',
         'no-dupe-args': 2,
         'no-dupe-keys': 2,
         'no-unreachable': 2,
         'react/jsx-key': 2,
         'react/jsx-no-duplicate-props': 2,
-        'react/jsx-no-undef': 2,
+        'react/jsx-no-undef': 'off',
         'react/jsx-uses-vars': 2,
         'react/no-children-prop': 2,
         'react/no-deprecated': 2, // react version 감지하여 deprecated 된 함수 경고

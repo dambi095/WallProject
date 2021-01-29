@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import {RouteComponentProps} from 'react-router';
 import styled from 'styled-components';
 import {VscThreeBars, VscExpandAll} from 'react-icons/vsc';
+import {Link, RouteComponentProps, withRouter} from 'react-router-dom';
 
 const Container = styled.div`
 	position: relative;
@@ -33,13 +33,17 @@ const MenwIcon = styled.div`
 	margin-right: 20px;
 `;
 
-const MainHeader: React.FC<RouteComponentProps> = ({history}) => {
-	const createPosts = () => {};
-
+const MainHeader: React.FC<RouteComponentProps> = (
+	props: RouteComponentProps,
+) => {
 	return (
 		<Container>
-			<WriteIcon>
-				<VscExpandAll size='35' onClick={createPosts} />
+			<WriteIcon
+				onClick={() => {
+					props.history.replace('/login');
+				}}
+			>
+				<VscExpandAll size='35' />
 			</WriteIcon>
 			<P>EVERYONE&rsquo;S WALL</P>
 			<MenwIcon>
@@ -49,4 +53,4 @@ const MainHeader: React.FC<RouteComponentProps> = ({history}) => {
 	);
 };
 
-export default MainHeader;
+export default withRouter(MainHeader);

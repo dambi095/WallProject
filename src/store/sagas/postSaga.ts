@@ -1,10 +1,10 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
-import * as api from '../../api/index';
+import API from '../../api/index';
 import * as actions from '../actions';
 
 function* fetchPostSaga(action: any) {
 	try {
-		const res = yield call(api.loadPostApi, 1);
+		const res = yield call(API.loadPostApi, 1);
 		yield put(actions.loadPostSuccess(res.data, false)); // put으로 dispatch!
 	} catch (error) {
 		yield put(actions.loadPostFail(error, true));

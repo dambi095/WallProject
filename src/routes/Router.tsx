@@ -1,16 +1,20 @@
 import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
-import Home from '../pages/Home';
-import Login from '../pages/Login';
+import {Login, Home, Write} from '../pages/index';
+import MainHeader from '../components/MainHeader';
+import MainFooter from '../components/MainFooter';
 
 const Router: React.FC = () => {
 	return (
 		<BrowserRouter>
+			<MainHeader />
 			<Switch>
-				<Route exact path='/login' component={Login} />
-				<Route path='/' component={Home} />
+				<Route exact path='/' component={Home} />
+				<Route path='/write' component={Write} />
+				<Route path='/login' component={Login} />
 				<Redirect path='*' to='/' />
 			</Switch>
+			<MainFooter />
 		</BrowserRouter>
 	);
 };

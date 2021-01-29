@@ -75,4 +75,4 @@ const Login: React.FC = () => {
 	);
 };
 
-export default withRouter(Login);
+export default Login;
