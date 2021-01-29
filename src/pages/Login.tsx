@@ -50,8 +50,7 @@ const Login: React.FC = () => {
 					className='form-control'
 					placeholder='Enter password'
 					onChange={(e) =>
-						setInfo({...info, password: e.target.value})
-					}
+						setInfo({...info, password: e.target.value})}
 				/>
 			</div>
 

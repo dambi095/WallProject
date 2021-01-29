@@ -17,7 +17,6 @@ const App: React.FC = () => {
 	return (
 		<ThemeProvider theme={nowTheme}>
 			<GlobalStyle />
-			<MainHeader />
 			<Router />
 			<MainFooter />
 		</ThemeProvider>

@@ -34,10 +34,7 @@ const MenwIcon = styled.div`
 `;
 
 const MainHeader: React.FC<RouteComponentProps> = ({history}) => {
-	console.log('@', history);
-	const createPosts = () => {
-		console.log('222');
-	};
+	const createPosts = () => {};
 
 	return (
 		<Container>
