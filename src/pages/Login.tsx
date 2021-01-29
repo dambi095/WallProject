@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import styled from 'styled-components';
-import {useHistory, withRouter} from 'react-router';
-import {RootState} from '../store/reducers';
 import {login as actionLogin} from '../store/actions';
 import {IUser} from '../interfaces/interface';
 
@@ -17,13 +15,7 @@ const Login: React.FC = () => {
 		name: '',
 		password: '',
 	});
-	const history = useHistory();
-	const {user, isLoggedin} = useSelector((state: RootState) => state.user);
 	const dispatch = useDispatch();
-
-	if (isLoggedin) {
-		history.push('/');
-	}
 
 	const login = () => {
 		dispatch(

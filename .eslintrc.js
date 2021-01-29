@@ -14,7 +14,7 @@ module.exports = {
         'prettier',
     ],
     rules: {
-        'prettier/prettier': 0, //prettier 에 대한 경고 끄기
+        'prettier/prettier': 0, 
         'semi':'error',
         'no-use-before-define': 'off',
         '@typescript-eslint/no-use-before-define': 'off', // 'React' was used before it was defined 오류 해결
@@ -43,7 +43,7 @@ module.exports = {
         'react/no-is-mounted': 2,
         'react/no-render-return-value': 2,
         'react/no-unknown-property': 2,
-        'react/require-render-return': 2, //render method를 작성할때 return 이 없으면 경고
+        'react/require-render-return': 2, 
         'import/extensions': [
 			'error',
 			'ignorePackages',

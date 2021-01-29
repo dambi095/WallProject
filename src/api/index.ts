@@ -25,7 +25,6 @@ class API {
 				);
 			},
 			(error: AxiosError) => {
-				console.error(`Error message "${error.message}"`);
 				if (error.response) {
 					return error.response;
 				}

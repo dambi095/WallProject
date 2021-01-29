@@ -11,15 +11,15 @@ export const LOAD_POST_FAIL = 'LOAD_POST_FAIL';
 /* 로그인 */
 export const login = (user: IUser, isLoggedin: boolean) => {
 	return {
-		type: LOGIN,
-		payload: user,
-		isLoggedin,
+        type: LOGIN,
+        payload: user,
+        isLoggedin,
 	};
 };
 
 export const loginSuccess = (user: IUser, isLoggedin: boolean) => {
 	return {
-		type: LOAD_POST_SUCCESS,
+		type: LOGIN_SUCCESS,
 		payload: user,
 		isLoggedin,
 	};
@@ -27,7 +27,7 @@ export const loginSuccess = (user: IUser, isLoggedin: boolean) => {
 
 export const loginFail = (error: Error, isLoggedin: boolean) => {
 	return {
-		type: LOAD_POST_SUCCESS,
+		type: LOGIN_FAIL,
 		payload: error,
 		isLoggedin,
 	};

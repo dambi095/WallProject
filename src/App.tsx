@@ -1,8 +1,6 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
 import useTheme from './hooks/useTheme';
-import MainFooter from './components/MainFooter';
-import MainHeader from './components/MainHeader';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import 'react-toastify/dist/ReactToastify.css';
 import theme from './styles/theme';

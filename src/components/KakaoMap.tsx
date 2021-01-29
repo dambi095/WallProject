@@ -46,7 +46,6 @@ const KakaoMap: React.FC = () => {
 					(position) => {
 						resolve(position);
 						setIsAgreed(true);
-						setIsLoading(false);
 					},
 					() => {
 						setIsAgreed(false);
@@ -57,7 +56,9 @@ const KakaoMap: React.FC = () => {
 			})
 				.then((data) => {
 					window.kakao.maps.load(() => {
-						const container = document.getElementById('map');
+						setIsLoading(false);
+						if(isAgreed && isLoading) {
+const container = document.getElementById('map');
 						const mapOption = {
 							center: new window.kakao.maps.LatLng(
 								data.coords.latitude,
@@ -155,13 +156,17 @@ const KakaoMap: React.FC = () => {
 							} else {
 								m.setMap(null);
 							}
-						});
+						 });
+						}
 					});
 				})
 				.catch(() => toast('다시시도 해주세요'));
 		} else {
 			toast('위치 정보가 지원되지 않습니다');
 		}
+
+		return () => setIsLoading(false); // cleanup function을 이용
+
 	}, [isAgreed, isLoading]);
 
 	return (

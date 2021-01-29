@@ -16,8 +16,8 @@ const Container = styled.div`
 
 const Home: React.FC = () => {
 	const {posts, isLoading} = useSelector((state: RootState) => state.posts);
-	const dispatch = useDispatch();
-
+  const dispatch = useDispatch();
+  
 	useEffect(() => {
 		dispatch(actions.loadPost());
 	}, [isLoading]);

@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {VscThreeBars, VscExpandAll} from 'react-icons/vsc';
 import {Link, RouteComponentProps, withRouter} from 'react-router-dom';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store/reducers';
 
 const Container = styled.div`
 	position: relative;
@@ -36,12 +38,19 @@ const MenwIcon = styled.div`
 const MainHeader: React.FC<RouteComponentProps> = (
 	props: RouteComponentProps,
 ) => {
+  const isLoggedin = useSelector((state: RootState) => state.user.isLoggedin, shallowEqual);
+  
+  const moveWritePage = () => {
+    if(!isLoggedin) {
+      return props.history.push('/login');
+    }
+    return props.history.push('/write');
+  };
+
 	return (
 		<Container>
 			<WriteIcon
-				onClick={() => {
-					props.history.replace('/login');
-				}}
+				onClick={moveWritePage}
 			>
 				<VscExpandAll size='35' />
 			</WriteIcon>
