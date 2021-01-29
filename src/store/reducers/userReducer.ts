@@ -7,19 +7,19 @@ const initialState = {
 
 export const userReducer = (state = initialState, action: any) => {
 	const {payload, isLoggedin} = action;
-
+	
 	switch (action.type) {
-		case 'LOAD_POST':
+		case 'LOGIN':
 			return {
 				...state,
 			};
-		case 'LOAD_POST_SUCCESS':
+		case 'LOGIN_SUCCESS':
 			return {
 				...state,
 				user: payload,
 				isLoggedin,
 			};
-		case 'LOAD_POST_FAIL':
+		case 'LOGIN_FAIL':
 			return {
 				...state,
 				isLoggedin,
