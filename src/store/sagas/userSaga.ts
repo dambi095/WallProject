@@ -1,6 +1,5 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
 import API from '../../api/index';
-import { IUser } from '../../interfaces/interface';
 import * as actions from '../actions';
 
 function* login(payload: any) {

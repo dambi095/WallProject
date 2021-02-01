@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
+import { RouteComponentProps } from 'react-router';
 import {login as actionLogin} from '../store/actions';
-import {IUser} from '../interfaces/interface';
+import {IKakaoAuth, IUser} from '../interfaces/interface';
+import { RootState } from '../store/reducers';
+
 
 const Container = styled.div`
 	min-height: 100%;
@@ -10,59 +14,40 @@ const Container = styled.div`
 	color: ${(props) => props.theme.primaryText};
 `;
 
-const Login: React.FC = () => {
-	const [info, setInfo] = useState<IUser>({
-		name: '',
-		password: '',
-	});
-	const dispatch = useDispatch();
+const Button = styled.button`
+
+`;
+
+const Login: React.FC<RouteComponentProps> = ({history}: RouteComponentProps) => {	
+	const isLoggedIn = useSelector((state: RootState) => state.user);
+    const dispatch = useDispatch();
 
 	const login = () => {
-		dispatch(
-			actionLogin({name: info.name, password: info.password}, false),
-		);
+		try{
+			return new Promise((resolve, reject) => {
+				if(!window.Kakao){
+					reject(Error);
+				}
+				window.Kakao.Auth.login({
+					success: (auth: IKakaoAuth) => {
+						toast.done(`정상적으로 로그인 되었습니다!${auth}`);
+						dispatch(actionLogin(auth, false));
+					},
+					fail: (e: Error) => {
+						toast.error(`login error => ${e}`);
+					}
+				});
+			});
+		}catch(e){
+			toast.error(`catch => ${e}`);
+		}
 	};
 
 	return (
 		<Container>
-			<div className='form-group'>
-				<p>Name</p>
-				<input
-					type='text'
-					className='form-control'
-					placeholder='Enter name'
-					onChange={(e) => setInfo({...info, name: e.target.value})}
-				/>
-			</div>
-
-			<div className='form-group'>
-				<p>Password</p>
-				<input
-					type='password'
-					className='form-control'
-					placeholder='Enter password'
-					onChange={(e) =>
-						setInfo({...info, password: e.target.value})}
-				/>
-			</div>
-
-			<div className='form-group'>
-				<div className='custom-control custom-checkbox'>
-					<input
-						type='checkbox'
-						className='custom-control-input'
-						id='customCheck1'
-					/>
-				</div>
-			</div>
-
-			<button
-				type='submit'
-				className='btn btn-dark btn-lg btn-block'
-				onClick={() => login}
-			>
-				Sign in
-			</button>
+		    <Container>
+			  <Button onClick={login}>KAKAO LOGIN</Button>
+    		</Container>
 		</Container>
 	);
 };

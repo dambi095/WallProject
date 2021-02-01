@@ -1,4 +1,4 @@
-import {IUser, IType} from '../../interfaces/interface';
+import {IUser, IType, IKakaoAuth} from '../../interfaces/interface';
 
 export const LOGIN = 'LOGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUUCESS';
@@ -9,27 +9,27 @@ export const LOAD_POST_SUCCESS = 'LOAD_POST_SUCCESS';
 export const LOAD_POST_FAIL = 'LOAD_POST_FAIL';
 
 /* 로그인 */
-export const login = (user: IUser, isLoggedin: boolean) => {
+export const login = (auth: IKakaoAuth, isLoggedIn: boolean) => {
 	return {
         type: LOGIN,
-        payload: user,
-        isLoggedin,
+        payload: auth,
+        isLoggedIn,
 	};
 };
 
-export const loginSuccess = (user: IUser, isLoggedin: boolean) => {
+export const loginSuccess = (user: IUser, isLoggedIn: boolean) => {
 	return {
 		type: LOGIN_SUCCESS,
 		payload: user,
-		isLoggedin,
+		isLoggedIn,
 	};
 };
 
-export const loginFail = (error: Error, isLoggedin: boolean) => {
+export const loginFail = (error: Error, isLoggedIn: boolean) => {
 	return {
 		type: LOGIN_FAIL,
 		payload: error,
-		isLoggedin,
+		isLoggedIn,
 	};
 };
 

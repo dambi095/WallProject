@@ -1,14 +1,16 @@
 import axios, {AxiosError, AxiosInstance, AxiosResponse} from 'axios';
-import {IUser, ILoginResponse} from '../interfaces/interface';
+import {ILoginResponse, IKakaoAuth} from '../interfaces/interface';
 
 class API {
 	readonly http: AxiosInstance;
 
 	constructor() {
 		const http = axios.create({
-			baseURL: `/v1/api`,
 			headers: {
+				'Access-Control-Allow-Origin': '*',
+				'Access-Control-Allow-Headers': '*',
 				'Content-type': 'application/json; charset=UTF-8',
+        		'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, OPTIONS, DELETE'
 			},
 			responseType: 'json',
 			timeout: 30000,
@@ -36,8 +38,8 @@ class API {
 		this.http = http;
 	}
 
-	loginApi = (payload: IUser) => {
-		return axios.post<ILoginResponse>('');
+	loginApi = (payload: IKakaoAuth) => {
+		return this.http.post<ILoginResponse>('user/oauth', payload);
 	};
 
 	loadPostApi = (term: number) => {

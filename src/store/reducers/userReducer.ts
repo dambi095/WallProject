@@ -1,12 +1,12 @@
 import * as actions from '../actions';
 
 const initialState = {
-	isLoggedin: false,
+	isLoggedIn: false,
 	user: {},
 };
 
 export const userReducer = (state = initialState, action: any) => {
-	const {payload, isLoggedin} = action;
+	const {payload, isLoggedIn} = action;
 	
 	switch (action.type) {
 		case 'LOGIN':
@@ -17,12 +17,12 @@ export const userReducer = (state = initialState, action: any) => {
 			return {
 				...state,
 				user: payload,
-				isLoggedin,
+				isLoggedIn,
 			};
 		case 'LOGIN_FAIL':
 			return {
 				...state,
-				isLoggedin,
+				isLoggedIn,
 			};
 		default:
 			return state;

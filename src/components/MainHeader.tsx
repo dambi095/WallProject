@@ -38,13 +38,17 @@ const MenwIcon = styled.div`
 const MainHeader: React.FC<RouteComponentProps> = (
 	props: RouteComponentProps,
 ) => {
-  const isLoggedin = useSelector((state: RootState) => state.user.isLoggedin, shallowEqual);
+  const isLoggedIn = useSelector((state: RootState) => state.user.isLoggedIn, shallowEqual);
   
   const moveWritePage = () => {
-    if(!isLoggedin) {
+    if(!isLoggedIn) {
       return props.history.push('/login');
     }
     return props.history.push('/write');
+  };
+
+  const moveHome = () => {
+	  return props.history.push('/');
   };
 
 	return (
@@ -54,7 +58,7 @@ const MainHeader: React.FC<RouteComponentProps> = (
 			>
 				<VscExpandAll size='35' />
 			</WriteIcon>
-			<P>EVERYONE&rsquo;S WALL</P>
+			<P onClick={moveHome}>EVERYONE&rsquo;S WALL</P>
 			<MenwIcon>
 				<VscThreeBars size='33' />
 			</MenwIcon>

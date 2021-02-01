@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.35",
     "@blueprintjs/core": "^3.36.0",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
@@ -15,6 +16,7 @@
     "@types/react-redux": "^7.1.15",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.7",
+    "aws-amplify": "^3.3.15",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.20",
@@ -70,5 +72,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1"
-  }
+  },
+  "private": true,
+  "proxy": "http://localhost:8088/"
 }
